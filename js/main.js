@@ -157,4 +157,16 @@ dateSpans.forEach(dateSpan => {
   dateSpan.textContent = getCurrentDate();
 });
 
+const listItems = document.querySelectorAll('.national_list .list');
 
+// 각 리스트 아이템에 대한 클릭 이벤트를 추가합니다.
+listItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+        // 모든 리스트 아이템에서 'active' 클래스를 제거합니다.
+        listItems.forEach(function(item) {
+            item.classList.remove('active');
+        });
+        // 현재 클릭한 리스트 아이템에만 'active' 클래스를 추가합니다.
+        this.classList.add('active');
+    });
+});
